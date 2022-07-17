@@ -1,0 +1,23 @@
+.RollDice {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.RollDice button {
+  padding: 10px;
+  width: 100%;
+  margin: 0 0 20px 0;
+  background: none;
+  font-size: 18px;
+  color: #555;
+  border: 3px solid #555;
+}
+/* Setting hover effect on button */
+.RollDice button:hover {
+  cursor: pointer;
+}
+
+.RollDice button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
