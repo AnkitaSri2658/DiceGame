@@ -60,7 +60,9 @@ const Players = () => {
   }
 
   //Handling case onclick of Roll button add score,show winner
-  const HandleAddScore = (latestScore, playerName, playerId) => {
+  const HandleAddScore = (playerDetails) => {
+    const { latestScore, playerName, playerId, imgUrl } = playerDetails;
+
     if (count < players.length - 1)
       setCount((prevState) => {
         return prevState + 1;
@@ -71,9 +73,10 @@ const Players = () => {
 
     if (scroreToWin !== 0 && latestScore >= scroreToWin) {
       setWinner({
-        playerName: playerName,
+        playerName,
         score: latestScore,
-        playerId: playerId,
+        playerId,
+        imgUrl,
       });
     }
   };
@@ -100,6 +103,9 @@ const Players = () => {
         <div className="winnerContainer">
           <img src="./src/assets/winner.png" />
           <h2>{winner.playerName}</h2>
+          <p>
+            <img style={{ width: 100 }} src={winner.imgUrl} />
+          </p>
           <p>Score:{winner.score}</p>
           <p>Player Id: {winner.playerId}</p>
         </div>

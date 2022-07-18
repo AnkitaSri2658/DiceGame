@@ -13,7 +13,13 @@ const PlayerItem = (props) => {
       latestScore = prevState + newScore;
       return latestScore;
     });
-    props.AddScore(latestScore, props.name, props.id);
+    const playerDetails = {
+      latestScore,
+      playerName: props.name,
+      playerId: props.id,
+      imgUrl: props.imageUrl,
+    };
+    props.AddScore(playerDetails);
   };
 
   return (

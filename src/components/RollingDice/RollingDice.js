@@ -9,9 +9,7 @@ const RollingDice = (props) => {
   });
 
   const handleRolling = () => {
-    const sides = [1, 2, 3, 4, 5, 6];
-    // "two", "three", "four", "five", "six"];
-    const score = sides[Math.floor(Math.random() * sides.length)];
+    const score = Math.floor(Math.random() * 6) + 1;
     setRollDice({
       dice: score,
       rolling: true,
